@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>اخبار روز</title>
+  <style>
+    /* reset سبک و تایپوگرافی پایه */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Naskh Arabic", "Noto Sans Arabic", "Tahoma", sans-serif;
+      line-height: 1.6;
+      color: #0b1736;
+      background-image: url("https://i.ibb.co/21dkQL49/New-Project-120-9749119.png");
+      background-size: cover;          /* تمام صفحه */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;    /* پس‌زمینه تکان نمی‌خورد */
+    }
+
+    /* هدر */
+    .topbar {
+      background: #0e3a67;
+      color: #fff;
+      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .topbar-title {
+      font-size: clamp(18px, 2.4vw, 28px);
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex: 0 0 auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,.35);
+    }
+
+    /* محتوای اصلی */
+    .wrap {
+      max-width: 980px;
+      margin: 22px auto 64px;
+      padding: 0 14px;
+    }
+
+    /* کارت خبر */
+    .card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 10px;
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 22px rgba(0,0,0,.35);
+      margin-bottom: 22px;
+    }
+    .card img.news-img {
+      display: block;
+      width: 100%;
+      height: clamp(220px, 45vw, 520px);  /* تصویر 1×1 را به صورت کاور نمایش می‌دهد */
+      object-fit: cover;
+      border-radius: 14px;
+      background: #0b1736; /* در صورت لود نشدن تصویر */
+    }
+
+    /* باکس متن زیر عکس */
+    .caption {
+      margin-top: 10px;
+      background: #fff;
+      color: #111827;
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.2);
+    }
+    .caption .name {
+      font-weight: 800;
+      font-size: clamp(16px, 2.1vw, 22px);
+      margin: 0 0 6px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .caption .text {
+      margin: 0;
+      font-size: clamp(14px, 1.9vw, 18px);
+      line-height: 1.9;
+      overflow-wrap: anywhere; /* نذار متن بیرون بزند */
+    }
+
+    /* دسترسی‌پذیری: فوکوس‌ها */
+    a:focus, button:focus { outline: 3px solid #60a5fa; outline-offset: 2px; }
+
+    /* واکنش‌گرا برای تبلت/دسکتاپ */
+    @media (min-width: 768px) {
+      .card { padding: 14px; }
+      .logo { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- هدر آبی با لوگوی قرمز -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <h1 class="topbar-title">اخبار روز</h1>
+      <img class="logo" src="https://i.ibb.co/gMKLDtXt/New-Project-8-E409540.png"
+           alt="لوگوی اخبار" loading="eager" decoding="async">
+    </div>
+  </header>
+
+  <!-- محتوای صفحه -->
+  <main class="wrap" role="main" aria-label="فهرست اخبار">
+
+    <!-- خبر 1 -->
+    <article class="card" aria-labelledby="t1">
+      <img class="news-img"
+           src="https://i.ibb.co/hRdgvmnt/New-Project-3159326.png"
+           alt="تصویر خبر اول" loading="lazy" decoding="async">
+      <div class="caption">
+        <h2 id="t1" class="name">نجیب بروت</h2>
+        <p class="text">«در تماس تلفنی با ریس جمهور روسیه آقای پوتین برای حل تنش ها میان ایران و اسرائیل گفت‌وگو کردن»</p>
+      </div>
+    </article>
+
+    <!-- خبر 2 -->
+    <article class="card" aria-labelledby="t2">
+      <img class="news-img"
+           src="https://i.ibb.co/4Rt8h0P3/New-Project-A3-A49-F6.png"
+           alt="تصویر خبر دوم" loading="lazy" decoding="async">
+      <div class="caption">
+        <h2 id="t2" class="name">سلام دین الا</h2>
+        <p class="text">«گروهی به این»</p>
+      </div>
+    </article>
+
+    <!-- خبر 3 -->
+    <article class="card" aria-labelledby="t3">
+      <img class="news-img"
+           src="https://i.ibb.co/xbkVsmp/New-Project-547-E66-D.png"
+           alt="تصویر خبر سوم" loading="lazy" decoding="async">
+      <div class="caption">
+        <h2 id="t3" class="name">جنرال اچه</h2>
+        <p class="text">«هیچ کسی ارامش نداشت»</p>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>
